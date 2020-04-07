@@ -2,23 +2,29 @@
 // ma calculette
 
 $resultat = 0;
-$operande1 = $argv[1];
-$operande2 = $argv[3];
 $operateur = $argv[2];
+$operande1 = strval($argv[1]);
+$operande2 = strval($argv[3]);
 
 //var_dump($argc);
 //var_dump($argv);
 
-
 switch($operateur){
     case '+':
         $resultat = $operande1 + $operande2;
+        break;
 
     case '-':
         $resultat = $operande1 - $operande2;
+        break;
+
+    case 'x':
+        $resultat = $operande1 * $operande2;
+        break;
 
     case '*':
         $resultat = $operande1 * $operande2;
+        break;
 
     case '/':
         if ($operande2 == 0)
@@ -29,7 +35,7 @@ switch($operateur){
         {
             $resultat = $operande1 / $operande2;
         } 
-
+        break;
 }   
 
 echo($resultat);
