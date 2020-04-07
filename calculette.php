@@ -2,29 +2,32 @@
 // ma calculette
 
 $resultat = 0;
+$operande1 = $argv[1];
+$operande2 = $argv[3];
+$operateur = $argv[2];
 
 //var_dump($argc);
 //var_dump($argv);
 
 
-switch($argv[2]){
+switch($operateur){
     case '+':
-        $resultat = $argv[1] + $argv[3];
+        $resultat = $operande1 + $operande2;
 
     case '-':
-        $resultat = $argv[1] - $argv[3];
+        $resultat = $operande1 - $operande2;
 
     case '*':
-        $resultat = $argv[1] * $argv[3];
+        $resultat = $operande1 * $operande2;
 
     case '/':
-        if ($argv[3] == 0)
+        if ($operande2 == 0)
         {
             $resultat='Diviser par zéro, en voilà une drôle d\'idée';
         }
         else
         {
-            $resultat = $argv[1] / $argv[3];
+            $resultat = $operande1 / $operande2;
         } 
 
 }   
