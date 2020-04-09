@@ -9,32 +9,53 @@ $operande2 = strval($argv[3]);
 //var_dump($argc);
 //var_dump($argv);
 
-switch($operateur){
-    case '+':
-        $resultat = $operande1 + $operande2;
-        break;
+function additionner($valeur1, $valeur2){
+    $addition = $valeur1 + $valeur2;
+    return $addition;
+}
 
-    case '-':
-        $resultat = $operande1 - $operande2;
-        break;
+function soustraire($valeur1, $valeur2){
+    $soustraction = $valeur1 - $valeur2;
+    return $soustraction;
+}
 
-    case 'x':
-        $resultat = $operande1 * $operande2;
-        break;
+function multiplier($valeur1, $valeur2){
+    $multiplication = $valeur1 * $valeur2;
+    return $multiplication;
+}
 
-    case '*':
-        $resultat = $operande1 * $operande2;
-        break;
-
-    case '/':
-        if ($operande2 == 0)
+function diviser($numerateur, $denominateur){
+    if ($denominateur == 0)
         {
-            $resultat='Diviser par zéro, en voilà une drôle d\'idée';
+            $division = 'Diviser par zéro, en voilà une drôle d\'idée';
         }
         else
         {
-            $resultat = $operande1 / $operande2;
+            $division = $numerateur / $denominateur;
         } 
+    return $division;
+}
+
+
+switch($operateur){
+    case '+':
+        $resultat = additionner($operande1, $operande2);
+        break;
+
+    case '-':
+        $resultat = soustraire($operande1, $operande2);
+        break;
+
+    case 'x':
+        $resultat = multiplier($operande1, $operande2);
+        break;
+
+    case '*':
+        $resultat = multiplier($operande1, $operande2);
+        break;
+
+    case '/':
+        $resultat = diviser($operande1, $operande2);
         break;
 }   
 
