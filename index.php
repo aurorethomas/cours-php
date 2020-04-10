@@ -1,7 +1,21 @@
 <?php
 $heure = date("H:i");
-echo 'Aurore'; 
+$livres = [
+  [
+    'titre' => 'Le pendu de Conakry',
+    'auteur' => 'Jean-Christophe Rufin',
+    'isbn' => '2072713277',
+    'prix' => 15
+  ],
+  [
+    'titre' => 'Le Capital (Tome 1-Livre I)',
+    'auteur' => 'Karl Marx',
+    'isbn' => '2070355748',
+    'prix' => 10
+  ],
+];
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -12,61 +26,24 @@ echo 'Aurore';
   <section>
     <h1>Ma librarie</h1>
     <p>
-      Bienvenue Aurore sur <strong>Ma Librarie.fr</strong></br>
+      Bienvenue sur <strong>Ma Librarie.fr</strong></br>
       Il est <?php echo $heure ?> </br>
-      Ici vous allez pouvoir retrouver tout vos livres préférés à des prix défiant toute concurrence.</br>
+      Ici vous allez pouvoir retrouver tout vos livres préférés à des prix défiant toute concurrence.
     </p>
-
   </section>
   <section>
-    <div>
-      <ul>
-          <li>
-            <strong>Titre: </strong>Le pendu de Conakry</br>
-          </li>
-          <li>
-            <strong>Auteur: </strong>Jean-Christophe Rufin</br>
-          </li>
-          <li>
-            <strong>ISBN: </strong>2072713277</br>
-          </li>
-          <li>
-            <strong>Prix: </strong>15€</br>
-          </li>
-        </ul>
-    </div>
-    <div>
-      <ul>
-          <li>
-            <strong>Titre: </strong>Le Capital (Tome 1-Livre I) </br>
-          </li>
-          <li>
-            <strong>Auteur: </strong>Karl Marx</br>
-          </li>
-          <li>
-            <strong>ISBN: </strong>2070355748</br>
-          </li>
-          <li>
-            <strong>Prix: </strong>10€</br>
-          </li>
-        </ul>
-    </div>
-    <div>
-      <ul>
-          <li>
-            <strong>Titre: </strong>Living Documentation</br>
-          </li>
-          <li>
-            <strong>Auteur: </strong>Cyrille Martraire</br>
-          </li>
-          <li>
-            <strong>ISBN: </strong>0134689321</br>
-          </li>
-          <li>
-            <strong>Prix: </strong>40€</br>
-          </li>
-        </ul>
-    </div>
+  <?php  
+  foreach ($livres as $livre) {
+    echo '<div>';
+    echo '<ul>';
+    echo '<li>' . '<strong>' . 'Titre: ' . '</strong>' . $livre['titre'] . '</br>' . '</li>';
+    echo '<li>' . '<strong>' . 'Auteur: ' . '</strong>' . $livre['auteur'] . '</br>' . '</li>';
+    echo '<li>' . '<strong>' . 'ISBN: ' . '</strong>' . $livre['isbn'] . '</br>' . '</li>';
+    echo '<li>' . '<strong>' . 'Prix: ' . '</strong>' . $livre['prix'] . '</br>' . '</li>';
+    echo '</div>';
+    echo '</ul>';
+  }
+  ?>
   </section>
 </body>
 </html>
