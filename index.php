@@ -1,3 +1,8 @@
+<?php
+$heure = date("H:i");
+echo 'Aurore'; 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +12,11 @@
   <section>
     <h1>Ma librarie</h1>
     <p>
-      Bienvenue sur <strong>Ma Librarie.fr</strong></br>
-      Ici vous allez pouvoir retrouver tout vos livres préférés à des prix défiant toute concurrence.
+      Bienvenue Aurore sur <strong>Ma Librarie.fr</strong></br>
+      Il est <?php echo $heure ?> </br>
+      Ici vous allez pouvoir retrouver tout vos livres préférés à des prix défiant toute concurrence.</br>
     </p>
+
   </section>
   <section>
     <div>
